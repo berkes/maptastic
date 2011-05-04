@@ -7,7 +7,7 @@ module Formtastic
         set_default_fields
         input_wrapping do
           hidden_fields_html <<
-          label_text <<
+          label_html <<
           map_tag <<
           map_js
         end
