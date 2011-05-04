@@ -3,7 +3,7 @@ MaptasticMap = function(options) {
 }
 MaptasticMap.prototype = {
 	marker: null,
-	options: { mapId: null, latitudeInput: null, longitudeInput: null }, // default options
+	options: { mapId: null, latInput: null, lngInput: null, zoomInput: null }, // default options
 	setMarker: function(map, location) {
 		if (!this.marker) this.createMarker(map, location);
 		this.marker.setPosition(location);
@@ -25,8 +25,13 @@ MaptasticMap.prototype = {
 	},
 	init: function(options) {
 		this.options = options;
+        if (document.getElementById(this.options.zoomInput).value){
+            this.zoom=document.getElementById(this.options.zoomInput).value;
+        }else{
+            this.zoom=8
+        }
 		var map = new google.maps.Map(document.getElementById(this.options.mapId), {
-			zoom: 6,
+			zoom: this.zoom,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		});
 		if (document.getElementById(this.options.latInput).value && document.getElementById(this.options.lngInput).value) {
@@ -40,6 +45,9 @@ MaptasticMap.prototype = {
   			});
 		}
 		var clazz = this;
+        google.maps.event.addListener(map, 'zoom_changed', function(event) {
+            document.getElementById(clazz.options.zoomInput).value = map.getZoom();
+        });
 		google.maps.event.addListener(map, 'click', function(event){
 			clazz.setMarker(map, event.latLng);
 			clazz.updateInputs(event);

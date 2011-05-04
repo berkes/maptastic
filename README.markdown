@@ -2,23 +2,17 @@
 
 ## Installation
 
-First, you'll need to install [Formtastic][1].
+Rails3 & [Formtastic][1] ver 2.0.0.pre.
 
-Next, install Maptastic as a plugin:
 
-    script/plugin install git@github.com:MattHall/maptastic.git
-
-...and run the rake task to install the required js file into your javascripts directory. You will probably need to include this in your layouts, too.
-
-		    rake maptastic_form:install
 		
 You can alternatively install the gem:
 
     gem install maptastic-form
 
-Note if you're using the gem, then you'll need to copy the JS asset from:
+Also you'll need to copy the JS asset from:
 
-    https://github.com/MattHall/maptastic/blob/master/assets/javascripts/maptastic.js
+    https://github.com/Kasmanaft/maptastic/blob/master/assets/javascripts/maptastic.js
 
 You'll need to add the [Google Maps **V3**][3] script include in your page, above your semantic_form:
 
@@ -28,17 +22,17 @@ Note that you no longer need an API key with the latest Google Maps release.
 
 ## Usage
 
-Maptastic adds a new #multi_input method as well as the map control:
+Maptastic adds a new input type:
 
     <% semantic_form_for @venue do |f| %>
-      <%= f.multi_input :latitude, :longitude, :as => :map %>
+      <%= f.input :your_map, :latitude=>'latitude_field', :longitude=>'longitude_field', :zoom=>'zoom_field', :as => :map %>
     <% end %>
 
-Note that the map input expects two parameters - a latitude and longitude. The order is important.
+Note that the latitude, longitude and zoom is not . The order is not important.
 
 ## Development
 
-This plugin is under development. It's pretty simple, and patches are very welcome.
+This gem is under development. It's pretty simple, and patches are very welcome.
 
 [The Repo is available on GitHub][5]
 

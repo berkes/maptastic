@@ -11,7 +11,8 @@ Gem::Specification.new do |s|
   s.summary     = "The fastest way of adding maps to Formtastic forms"
   s.description = "Provides a map type to Formtastic, allowing you to easily add location selectors to your apps."
  
-  s.files        = Dir.glob("{lib,tasks}/**/*") + %w(MIT-LICENSE README.markdown)
+  s.files        = Dir.glob("{lib}/**/*") + %w(MIT-LICENSE README.markdown)
   
-  s.add_runtime_dependency('formtastic')
+  s.add_dependency(%q<rails>, ["~> 3.0"])
+  s.add_development_dependency(%q<formtastic>, ["~> 2.0"])
 end
