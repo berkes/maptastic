@@ -53,4 +53,4 @@ MaptasticMap.prototype = {
 			clazz.updateInputs(event);
 		});
 	}
-}
+};
