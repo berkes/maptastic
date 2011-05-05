@@ -34,6 +34,10 @@ MaptasticMap.prototype = {
 			zoom: this.zoom,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		});
+
+        //Quick hack for next work with map
+        $('#'+this.options.mapId).data('map',map);
+
 		if (document.getElementById(this.options.latInput).value && document.getElementById(this.options.lngInput).value) {
 			var location = new google.maps.LatLng(document.getElementById(this.options.latInput).value, document.getElementById(this.options.lngInput).value);
 			map.setCenter(location);

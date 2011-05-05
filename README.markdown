@@ -2,11 +2,11 @@
 
 ## Installation
 
-Rails3 & [Formtastic][1] ver 2.0.0.pre.
+jQuery & Rails3 & [Formtastic][1] ver 2.0.0.pre.
 
 
 		
-You can alternatively install the gem:
+You can install this as gem:
 
     gem install maptastic-form
 
