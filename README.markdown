@@ -2,7 +2,7 @@
 
 ## Installation
 
-jQuery & Rails3 & [Formtastic][1] ver 2.0.0.pre.
+jQuery & Rails3 & [Formtastic][1] ver 2.0.0.pre & CoffeeScript.
 
 
 		
@@ -13,6 +13,10 @@ You can install this as gem:
 Also you'll need to copy the JS asset from:
 
     https://github.com/Kasmanaft/maptastic/blob/master/assets/javascripts/maptastic.js
+
+Or copy CoffeScript from:
+
+    https://github.com/Kasmanaft/maptastic/blob/master/assets/coffeescript/maptastic.coffee
 
 You'll need to add the [Google Maps **V3**][3] script include in your page, above your semantic_form:
 

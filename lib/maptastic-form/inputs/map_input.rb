@@ -41,11 +41,11 @@ module Formtastic
 
       def map_js
         template.content_tag("script", :lang => "javascript") do
-        "new MaptasticMap({
-          mapId: '#{input_html_options[:id]}',
-          latInput: '#{additional_id :latitude}',
-          lngInput: '#{additional_id :longitude}',
-          zoomInput: '#{additional_id :zoom}'
+        "jQuery().ready(function() {
+          jQuery('##{input_html_options[:id]}').MaptasticMap({
+              latitude:'#{additional_id :latitude}',
+              longitude:'#{additional_id :longitude}',
+              zoom:'#{additional_id :zoom}'});
         });"
         end
       end
