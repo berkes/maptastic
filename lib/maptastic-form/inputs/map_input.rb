@@ -19,11 +19,15 @@ module Formtastic
       end
 
       def hidden_field_html key
-        template.hidden_field_tag("#{object_name}[#{input_html_options[key]}]")  
+        template.hidden_field_tag("#{object_name}[#{input_html_options[key]}]", value(key))  
       end
 
       def hidden_fields_html
         MAP_OPTIONS.map{|opt| hidden_field_html opt}.join.html_safe
+      end
+      
+      def value key
+        object.send(key) if object && object.respond_to?(key)
       end
 
       def additional_id key
@@ -32,7 +36,7 @@ module Formtastic
           sanitized_object_name,
           dom_index,
           input_html_options[key]
-        ].reject { |x| x.blank? }.join('_')
+        ].reject { |x| x.blank? }.join('_').to_sym
       end
 
       def map_tag
