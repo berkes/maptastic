@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
   s.files        = Dir.glob("{lib}/**/*") + %w(MIT-LICENSE README.markdown)
   
   s.add_dependency(%q<rails>, ["~> 3.0"])
-  s.add_development_dependency(%q<formtastic>, ["~> 2.0"])
+  s.add_dependency(%q<formtastic>, ["~> 2.0"])
 end
